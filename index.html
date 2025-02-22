@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OptiMAX PRO - Оптимизация Windows 10/11</title>
+  <!-- Подключение шрифтов: Montserrat для основного текста и Sacramento для заголовков -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    /* Сброс стилей */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #000;
+      color: #ddd;
+      line-height: 1.6;
+    }
+    /* Заголовки: тонкий рукописный шрифт с тонкой золотистой тенью (эффект маленьких "брызг") */
+    h1, h2, h3 {
+      font-family: 'Sacramento', cursive;
+      color: #e5b14c;
+      text-shadow: 1px 1px 1px rgba(229, 177, 76, 0.5);
+    }
+    header {
+      background: linear-gradient(135deg, #001f3f, #0a0a0a);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #333;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    nav ul li {
+      margin: 0 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #e5b14c;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #fff;
+    }
+    .hero {
+      background: url('hero-background.jpg') no-repeat center center/cover;
+      position: relative;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+    }
+    .hero h2 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+    /* Общая кнопка */
+    .cta-button {
+      background: #0a64a0;
+      padding: 15px 30px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      display: inline-block;
+    }
+    .cta-button:hover {
+      background: #074f7c;
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+    /* Стиль для кнопки в разделе "Скачать": уменьшены размеры, чтобы не закрывала текст */
+    #download .cta-button {
+      background: linear-gradient(45deg, #0a64a0, #0056b3);
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+    #download .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    section h2 {
+      margin-bottom: 40px;
+      font-size: 2.5em;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .feature {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      width: 300px;
+      padding: 30px;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      background: #262626;
+    }
+    .feature h3 {
+      margin-bottom: 15px;
+    }
+    .feature p {
+      color: #ccc;
+    }
+    footer {
+      background: #000;
+      color: #666;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #333;
+    }
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.5em;
+      }
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header>
+    <h1>OptiMAX PRO</h1>
+    <nav>
+      <ul>
+        <li><a href="#features">Особенности</a></li>
+        <li><a href="#download">Скачать</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Главный экран -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Оптимизируйте свою систему с OptiMAX PRO</h2>
+      <p>Мощное средство для ускорения Windows 10/11, повышающее стабильность и безопасность.</p>
+      <a href="#download" class="cta-button">Скачать сейчас</a>
+    </div>
+  </section>
+
+  <!-- Раздел "Особенности" -->
+  <section id="features">
+    <h2>Особенности</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Ускорение системы</h3>
+        <p>Оптимизируйте запуск и работу Windows для максимальной производительности.</p>
+      </div>
+      <div class="feature">
+        <h3>Безопасность</h3>
+        <p>Защитите систему от вредоносных программ и несанкционированного доступа.</p>
+      </div>
+      <div class="feature">
+        <h3>Простой интерфейс</h3>
+        <p>Удобный и интуитивно понятный дизайн, доступный для всех пользователей.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Раздел "Скачать" -->
+  <section id="download">
+    <h2>Скачать OptiMAX PRO</h2>
+    <p>Начните оптимизацию вашей системы уже сегодня!</p>
+    <a href="#" class="cta-button">Скачать сейчас</a>
+  </section>
+
+  <!-- Контактная информация -->
+  <section id="contact">
+    <h2>Контакты</h2>
+    <p>Свяжитесь с нами для получения дополнительной информации или поддержки.</p>
+    <p>Email: support@optimaxpro.com</p>
+  </section>
+
+  <!-- Подвал сайта -->
+  <footer>
+    <p>&copy; 2025 OptiMAX PRO. Все права защищены.</p>
+  </footer>
+</body>
+</html>
