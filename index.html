@@ -1,50 +1,188 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Мета-теги для SEO -->
-  <meta name="description" content="OptiMAX PRO - программа для оптимизации ПК на Windows 10/11, ускорения работы компьютера и повышения производительности">
-  <meta name="keywords" content="optimax pro, оптимизация ПК, ускорение Windows 10, ускорение Windows 11, программа для ПК">
+  <meta name="description" content="OptiMAX PRO - optymalizacja komputerów z Windows 10/11, przyspieszenie systemu i poprawa wydajności">
+  <meta name="keywords" content="optimax pro, optymalizacja PC, przyspieszenie Windows 10, przyspieszenie Windows 11, narzędzie wydajności">
   <meta name="author" content="gore777">
   <meta name="robots" content="index, follow">
-  <!-- Заголовок с ключевыми словами -->
-  <title>OptiMAX PRO - Оптимизация Windows 10/11</title>
+  <title>OptiMAX PRO - Optymalizacja Windows 10/11</title>
+  <!-- Подключение шрифтов Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    /* Ваш CSS остаётся без изменений */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Montserrat', sans-serif; background: #000; color: #ddd; line-height: 1.6; }
-    h1, h2, h3 { font-family: 'Sacramento', cursive; color: #e5b14c; text-shadow: 1px 1px 1px rgba(229, 177, 76, 0.5); }
-    header { background: linear-gradient(135deg, #001f3f, #0a0a0a); padding: 20px; text-align: center; border-bottom: 2px solid #333; }
-    header h1 { font-size: 3em; margin-bottom: 10px; }
-    nav ul { list-style: none; display: flex; justify-content: center; margin-top: 10px; }
-    nav ul li { margin: 0 20px; }
-    nav ul li a { text-decoration: none; color: #e5b14c; font-weight: 700; transition: color 0.3s; }
-    nav ul li a:hover { color: #fff; }
-    .hero { background: url('hero-background.jpg') no-repeat center center/cover; position: relative; height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; }
-    .hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
-    .hero-content { position: relative; z-index: 1; padding: 20px; }
-    .hero h2 { font-size: 3.5em; margin-bottom: 20px; }
-    .hero p { font-size: 1.2em; margin-bottom: 30px; color: #ccc; }
-    .cta-button { background: #0a64a0; padding: 15px 30px; color: #fff; text-decoration: none; font-size: 1.2em; border-radius: 5px; transition: background 0.3s, transform 0.3s, box-shadow 0.3s; display: inline-block; }
-    .cta-button:hover { background: #074f7c; transform: scale(1.05); box-shadow: 0 8px 15px rgba(0,0,0,0.3); }
-    #download .cta-button { background: linear-gradient(45deg, #0a64a0, #0056b3); padding: 15px 30px; font-size: 1.2em; border-radius: 8px; box-shadow: 0 8px 15px rgba(0,0,0,0.3); }
-    #download .cta-button:hover { transform: scale(1.05); box-shadow: 0 12px 20px rgba(0,0,0,0.4); }
-    section { padding: 60px 20px; text-align: center; }
-    section h2 { margin-bottom: 40px; font-size: 2.5em; }
-    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .feature { background: #1a1a1a; border: 1px solid #333; border-radius: 10px; width: 300px; padding: 30px; transition: transform 0.3s, background 0.3s; }
-    .feature:hover { transform: translateY(-5px); background: #262626; }
-    .feature h3 { margin-bottom: 15px; }
-    .feature p { color: #ccc; }
-    footer { background: #000; color: #666; padding: 20px; text-align: center; border-top: 1px solid #333; }
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      background: #0d0d0d; 
+      color: #e0e0e0; 
+      line-height: 1.8; 
+      overflow-x: hidden; 
+    }
+    h1, h2, h3 { 
+      font-family: 'Montserrat', sans-serif; 
+      color: #ffd700; 
+      text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.3); 
+    }
+    header { 
+      background: linear-gradient(135deg, #1e3a8a, #111827); 
+      padding: 30px; 
+      text-align: center; 
+      border-bottom: 3px solid #ffd700; 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+    }
+    header h1 { 
+      font-size: 3.5em; 
+      margin-bottom: 15px; 
+      animation: fadeInDown 1s ease; 
+    }
+    nav ul { 
+      list-style: none; 
+      display: flex; 
+      justify-content: center; 
+      gap: 30px; 
+      margin-top: 15px; 
+    }
+    nav ul li a { 
+      text-decoration: none; 
+      color: #ffd700; 
+      font-weight: 600; 
+      font-size: 1.1em; 
+      transition: color 0.3s, transform 0.3s; 
+    }
+    nav ul li a:hover { 
+      color: #fff; 
+      transform: scale(1.1); 
+    }
+    .hero { 
+      background: url('hero-background.jpg') no-repeat center center/cover; 
+      position: relative; 
+      height: 90vh; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
+      overflow: hidden; 
+    }
+    .hero::before { 
+      content: ""; 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: rgba(0, 0, 0, 0.6); 
+      z-index: 0; 
+    }
+    .hero-content { 
+      position: relative; 
+      z-index: 1; 
+      padding: 30px; 
+      animation: fadeInUp 1.2s ease; 
+    }
+    .hero h2 { 
+      font-size: 4em; 
+      margin-bottom: 25px; 
+      line-height: 1.2; 
+    }
+    .hero p { 
+      font-size: 1.4em; 
+      margin-bottom: 40px; 
+      color: #d1d5db; 
+    }
+    .cta-button { 
+      background: linear-gradient(45deg, #1e40af, #3b82f6); 
+      padding: 18px 40px; 
+      color: #fff; 
+      text-decoration: none; 
+      font-size: 1.3em; 
+      font-weight: 600; 
+      border-radius: 50px; 
+      transition: all 0.3s ease; 
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4); 
+    }
+    .cta-button:hover { 
+      background: linear-gradient(45deg, #1e3a8a, #2563eb); 
+      transform: translateY(-5px); 
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.6); 
+    }
+    section { 
+      padding: 80px 20px; 
+      text-align: center; 
+      background: linear-gradient(180deg, #0d0d0d, #1f2937); 
+    }
+    section h2 { 
+      margin-bottom: 50px; 
+      font-size: 3em; 
+      animation: fadeIn 1s ease; 
+    }
+    .features { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 30px; 
+      max-width: 1200px; 
+      margin: 0 auto; 
+    }
+    .feature { 
+      background: #1f2937; 
+      border: 1px solid #374151; 
+      border-radius: 15px; 
+      width: 320px; 
+      padding: 40px; 
+      transition: all 0.3s ease; 
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+    }
+    .feature:hover { 
+      transform: translateY(-10px); 
+      background: #374151; 
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
+    }
+    .feature h3 { 
+      margin-bottom: 20px; 
+      font-size: 1.8em; 
+    }
+    .feature p { 
+      color: #d1d5db; 
+      font-size: 1.1em; 
+    }
+    #download .cta-button { 
+      background: linear-gradient(45deg, #047857, #10b981); 
+      padding: 20px 50px; 
+      font-size: 1.4em; 
+    }
+    #download .cta-button:hover { 
+      background: linear-gradient(45deg, #065f46, #059669); 
+      transform: translateY(-5px); 
+    }
+    footer { 
+      background: #111827; 
+      color: #9ca3af; 
+      padding: 30px; 
+      text-align: center; 
+      border-top: 1px solid #374151; 
+    }
+    @keyframes fadeIn { 
+      from { opacity: 0; } 
+      to { opacity: 1; } 
+    }
+    @keyframes fadeInDown { 
+      from { opacity: 0; transform: translateY(-20px); } 
+      to { opacity: 1; transform: translateY(0); } 
+    }
+    @keyframes fadeInUp { 
+      from { opacity: 0; transform: translateY(20px); } 
+      to { opacity: 1; transform: translateY(0); } 
+    }
     @media (max-width: 768px) {
       .hero h2 { font-size: 2.5em; }
+      .hero p { font-size: 1.2em; }
       .features { flex-direction: column; align-items: center; }
       .feature { width: 90%; }
+      nav ul { flex-direction: column; gap: 15px; }
     }
   </style>
 </head>
@@ -53,56 +191,53 @@
     <h1>OptiMAX PRO</h1>
     <nav>
       <ul>
-        <li><a href="#features">Особенности</a></li>
-        <li><a href="#download">Скачать</a></li>
-        <li><a href="#contact">Контакты</a></li>
+        <li><a href="#features">Funkcje</a></li>
+        <li><a href="#download">Pobierz</a></li>
+        <li><a href="#contact">Kontakt</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <h2>Оптимизируйте свою систему с OptiMAX PRO</h2>
-      <p>Мощное средство для ускорения Windows 10/11, повышающее стабильность и безопасность.</p>
-      <a href="https://github.com/gore777/optimax-pro/releases/download/v1.0.0/OptimaxPro.exe" class="cta-button">Скачать сейчас</a>
+      <h2>Przyspiesz swój system z OptiMAX PRO</h2>
+      <p>Potężne narzędzie do optymalizacji Windows 10/11 dla szybkości, stabilności i bezpieczeństwa.</p>
+      <a href="https://github.com/gore777/optimax-pro/releases/download/v1.0.0/OptimaxPro.exe" class="cta-button">Pobierz teraz</a>
     </div>
   </section>
 
   <section id="features">
-    <h2>Особенности OptiMAX PRO</h2>
+    <h2>Dlaczego wybrać OptiMAX PRO?</h2>
     <div class="features">
       <div class="feature">
-        <h3>Ускорение системы</h3>
-        <p>Оптимизируйте запуск и работу Windows для максимальной производительности вашего ПК.</p>
+        <h3>Przyspieszenie systemu</h3>
+        <p>Zoptymalizuj uruchamianie i wydajność swojego komputera dzięki zaawansowanym narzędziom.</p>
       </div>
       <div class="feature">
-        <h3>Безопасность</h3>
-        <p>Защитите систему от вредоносных программ и несанкционированного доступа с OptiMAX PRO.</p>
+        <h3>Bezpieczeństwo</h3>
+        <p>Chroń swój system przed złośliwym oprogramowaniem i nieautoryzowanym dostępem.</p>
       </div>
       <div class="feature">
-        <h3>Простой интерфейс</h3>
-        <p>Удобный и интуитивно понятный дизайн, доступный для всех пользователей Windows 10/11.</p>
+        <h3>Prosty interfejs</h3>
+        <p>Intuicyjny i łatwy w obsłudze design dla wszystkich użytkowników Windows 10/11.</p>
       </div>
     </div>
   </section>
 
   <section id="download">
-    <h2>Скачать OptiMAX PRO</h2>
-    <p>Начните оптимизацию вашей системы уже сегодня с помощью программы OptiMAX PRO!</p>
-    <a href="https://github.com/gore777/optimax-pro/releases/download/v1.0.0/OptimaxPro.exe" class="cta-button">Скачать сейчас</a>
+    <h2>Pobierz OptiMAX PRO</h2>
+    <p>Rozpocznij optymalizację swojego systemu już dziś z OptiMAX PRO!</p>
+    <a href="https://github.com/gore777/optimax-pro/releases/download/v1.0.0/OptimaxPro.exe" class="cta-button">Pobierz teraz</a>
   </section>
 
   <section id="contact">
-    <h2>Контакты</h2>
-    <p>Свяжитесь с нами для получения дополнительной информации или поддержки по OptiMAX PRO.</p>
+    <h2>Skontaktuj się z nami</h2>
+    <p>Skontaktuj się z nami, aby uzyskać więcej informacji lub wsparcie dla OptiMAX PRO.</p>
     <p>Email: <a href="mailto:optimaxpr000@gmail.com">optimaxpr000@gmail.com</a></p>
   </section>
 
   <footer>
-    <p>© 2025 OptiMAX PRO by gore777. Все права защищены.</p>
+    <p>© 2025 OptiMAX PRO by gore777. Wszelkie prawa zastrzeżone.</p>
   </footer>
-
-  <!-- Sitemap для лучшей индексации (можно вынести в отдельный файл sitemap.xml) -->
-  <!-- Если вы хотите добавить sitemap.xml в репозиторий, создайте отдельный файл -->
 </body>
 </html>
