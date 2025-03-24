@@ -12,27 +12,36 @@
   <!-- Подключение шрифтов Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Sacramento&display=swap" rel="stylesheet">
   <style>
-    /* Дизайн из русской версии */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Montserrat', sans-serif; background: #000; color: #ddd; line-height: 1.6; }
-    h1, h2, h3 { font-family: 'Sacramento', cursive; color: #e5b14c; text-shadow: 1px 1px 1px rgba(229, 177, 76, 0.5); }
+    body { font-family: 'Montserrat', sans-serif; font-weight: 700; background: #000; color: #ddd; line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Sacramento', cursive; font-weight: 900; color: #e5b14c; text-shadow: 1px 1px 1px rgba(229, 177, 76, 0.5); }
     header { background: linear-gradient(135deg, #001f3f, #0a0a0a); padding: 20px; text-align: center; border-bottom: 2px solid #333; }
     header h1 { font-size: 3em; margin-bottom: 10px; }
     nav ul { list-style: none; display: flex; justify-content: center; margin-top: 10px; }
     nav ul li { margin: 0 20px; }
-    nav ul li a { text-decoration: none; color: #e5b14c; font-weight: 700; transition: color 0.3s; }
+    nav ul li a { text-decoration: none; color: #e5b14c; font-weight: 900; transition: color 0.3s; }
     nav ul li a:hover { color: #fff; }
     .lang-switcher { margin-top: 10px; }
-    .lang-switcher button { background: #0a64a0; color: #fff; border: none; padding: 8px 15px; margin: 0 5px; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
-    .lang-switcher button:hover { background: #074f7c; }
+    .lang-switcher select { 
+      background: #0a64a0; 
+      color: #fff; 
+      border: none; 
+      padding: 8px 15px; 
+      border-radius: 5px; 
+      font-family: 'Montserrat', sans-serif; 
+      font-weight: 700; 
+      cursor: pointer; 
+      transition: background 0.3s; 
+    }
+    .lang-switcher select:hover { background: #074f7c; }
     .hero { background: url('hero-background.jpg') no-repeat center center/cover; position: relative; height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; }
     .hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
     .hero-content { position: relative; z-index: 1; padding: 20px; }
     .hero h2 { font-size: 3.5em; margin-bottom: 20px; }
     .hero p { font-size: 1.2em; margin-bottom: 30px; color: #ccc; }
-    .cta-button { background: #0a64a0; padding: 15px 30px; color: #fff; text-decoration: none; font-size: 1.2em; border-radius: 5px; transition: background 0.3s, transform 0.3s, box-shadow 0.3s; display: inline-block; }
+    .cta-button { background: #0a64a0; padding: 15px 30px; color: #fff; text-decoration: none; font-size: 1.2em; border-radius: 5px; transition: background 0.3s, transform 0.3s, box-shadow 0.3s; display: inline-block; font-weight: 700; }
     .cta-button:hover { background: #074f7c; transform: scale(1.05); box-shadow: 0 8px 15px rgba(0,0,0,0.3); }
     #download .cta-button { background: linear-gradient(45deg, #0a64a0, #0056b3); padding: 15px 30px; font-size: 1.2em; border-radius: 8px; box-shadow: 0 8px 15px rgba(0,0,0,0.3); }
     #download .cta-button:hover { transform: scale(1.05); box-shadow: 0 12px 20px rgba(0,0,0,0.4); }
@@ -62,9 +71,11 @@
         <li><a href="#contact" data-lang="nav-contact">Contact</a></li>
       </ul>
       <div class="lang-switcher">
-        <button onclick="changeLanguage('en')">EN</button>
-        <button onclick="changeLanguage('pl')">PL</button>
-        <button onclick="changeLanguage('ru')">RU</button>
+        <select onchange="changeLanguage(this.value)">
+          <option value="en">EN</option>
+          <option value="pl">PL</option>
+          <option value="ru">RU</option>
+        </select>
       </div>
     </nav>
   </header>
@@ -73,7 +84,7 @@
     <div class="hero-content">
       <h2 data-lang="hero-title">Boost Your System with OptiMAX PRO</h2>
       <p data-lang="hero-text">A powerful tool to optimize Windows 10/11 for speed, stability, and security.</p>
-      <a href="https://github.com/gore777/optimax-pro/releases/download/v1.0.0/OptimaxPro.exe" class="cta-button" data-lang="hero-button">Download Now</a>
+      <a href="#" class="cta-button" data-lang="hero-button">Download Now</a>
     </div>
   </section>
 
@@ -98,7 +109,7 @@
   <section id="download">
     <h2 data-lang="download-title">Get OptiMAX PRO Now</h2>
     <p data-lang="download-text">Start optimizing your system today with OptiMAX PRO!</p>
-    <a href="https://github.com/gore777/optimax-pro/releases/download/v1.0.0/OptimaxPro.exe" class="cta-button" data-lang="download-button">Download Now</a>
+    <a href="#" class="cta-button" data-lang="download-button">Download Now</a>
   </section>
 
   <section id="contact">
@@ -184,7 +195,6 @@
         const key = element.getAttribute("data-lang");
         element.textContent = translations[lang][key];
       });
-      // Обновляем мета-теги и заголовок
       document.querySelector('meta[name="description"]').setAttribute("content", 
         lang === "en" ? "OptiMAX PRO - optimize your Windows 10/11 PC for speed, stability, and performance" :
         lang === "pl" ? "OptiMAX PRO - optymalizacja komputerów z Windows 10/11, przyspieszenie systemu i poprawa wydajności" :
